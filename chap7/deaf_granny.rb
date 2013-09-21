@@ -1,13 +1,22 @@
 puts "Say something to your lovely Granny:"
-random_year = rand(1920..1950).to_s
-spoken = gets.chomp
+bye_count = 0
 
-until spoken == spoken.upcase
-  
-  puts "HUH?! SPEAK UP SONNY"
+while true
   spoken = gets.chomp
- 
+  if spoken == "BYE"
+    bye_count +=1
+  else 
+    bye_count = 0
+  end
+  break if bye_count > 3
+  
+  response = if spoken != spoken.upcase
+    "HUH?! SPEAK UP SONNY"
+  else
+    "NO, NOT SINCE #{rand(1930..1950)}!"
+  end
+  puts response
 end 
-
-puts "NO, NOT SINCE #{random_year}!"
+puts "GOODBYE SWEATIE!"
+    
 
