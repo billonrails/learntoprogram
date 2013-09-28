@@ -1,4 +1,4 @@
-def old_roman_numeral(number)
+def new_roman_numeral(number)
   numeral = ''
   
   numeral = numeral + 'M' * (number / 1000)
@@ -10,4 +10,3 @@ def old_roman_numeral(number)
   numeral = numeral + 'I' * (number % 5 / 1)
   numeral
 end
-puts (old_roman_numeral(1999))
